@@ -3,11 +3,11 @@ import scala.collection.mutable.ArrayBuffer
 
 object Main extends App {
   var inputs = ArrayBuffer[String]()
-/*  for (ln <- io.Source.stdin.getLines()) {
+  for (ln <- io.Source.stdin.getLines()) {
     inputs.append(ln)
-  }*/
-  val numVals = 3//inputs(0).toInt
-  val numSeq = List("999", "81008", "808", "2133") //inputs.tail.toList
+  }
+  val numVals = /*3*/inputs(0).toInt
+  val numSeq = /*List("999", "81008", "808", "2133")*/ inputs.tail.toList
 
   numSeq.foreach(sym => println(nextSym(sym)))
 
