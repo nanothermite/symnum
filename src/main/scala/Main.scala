@@ -7,7 +7,7 @@ object Main extends App {
     inputs.append(ln)
   }
   val numVals = /*3*/inputs(0).toInt
-  val numSeq = /*List("999", "81008", "808", "2133")*/ inputs.tail.toList
+  val numSeq = /*List("234325", "999", "81008", "808", "2133")*/ inputs.tail.toList
 
   numSeq.foreach(sym => println(nextSym(sym)))
 
@@ -32,9 +32,7 @@ object Main extends App {
   def lr(inp: String): (String, String) = {
     val len = inp.length
     val mid = (len + 1) / 2
-    val left = inp.take(mid)
-    val right = inp.drop(len - mid)
-    (left, right)
+    (inp.take(mid), inp.drop(len - mid))
   }
 
   @tailrec
