@@ -38,10 +38,8 @@ object Main extends App {
   @tailrec
   def compareLR(left: String, right: String, i: Int): String = {
     if (i < 0) left
-    else {
-      if (left(i) > right(i)) left
-      else if (left(i) < right(i)) (BigInt.apply(left) + 1).toString
-      else compareLR(left, right, i - 1)
-    }
+    else if (left(i) > right(i)) left
+    else if (left(i) < right(i)) (BigInt.apply(left) + 1).toString
+    else compareLR(left, right, i - 1)
   }
 }
