@@ -18,11 +18,11 @@ object Main extends App {
     val oneSide = if (l == r.reverse) (BigInt(l) + 1).toString else compareLR(l, r.reverse, l.length - 1)
     val expanded = oneSide.length > l.length
 
-  // logic of combining the returned half:
-  // if (even and not expanded):  oneSide + oneSide.reverse
-  // if (even and expanded):      oneside + oneSide.reverse.drop(1)
-  // if (odd and not expanded):   oneside + oneSide.reverse.drop(1)
-  // if (odd and expanded):       oneside.take(oneSide.length - 1) + oneSide.reverse.drop(1)
+    // logic of combining the returned half:
+    // if (even and not expanded):  oneSide + oneSide.reverse
+    // if (even and expanded):      oneside + oneSide.reverse.drop(1)
+    // if (odd and not expanded):   oneside + oneSide.reverse.drop(1)
+    // if (odd and expanded):       oneside.take(oneSide.length - 1) + oneSide.reverse.drop(1)
 
     if (!odd && !expanded) oneSide + oneSide.reverse
     else if(odd && expanded) oneSide.take(oneSide.length - 1) + oneSide.reverse.drop(1)
